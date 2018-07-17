@@ -20,7 +20,7 @@ class UsersView(View):
     def get(self, request, *args, **kwargs):
         if not request.user.is_authenticated():
             return render(request, "home.html", {})
-        users = User.objects.all()
+        users = User.objects.all().exclude(username=request.user.username)
         return render(request, "menus/users.html", {'object_list': users})
 
 
