@@ -5,8 +5,8 @@ from django.http import Http404
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import CreateView, DetailView, View
 # Create your views here.
-from menus.models import Item
-from restaurants.models import RestaurantLocation,Todo
+
+from restaurants.models import Todo
 
 from .forms import RegisterForm
 from .models import Profile

@@ -18,8 +18,8 @@ urlpatterns = [
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
     url(r'^profile-follow/$', ProfileFollowToggle.as_view(), name='follow'),
     url(r'^u/', include('profiles.urls', namespace='profiles')),
-    url(r'^items/', include('menus.urls', namespace='menus')),
-    url(r'^restaurants/', include('restaurants.urls', namespace='restaurants')),
+    # url(r'^items/', include('menus.urls', namespace='menus')),
+    # url(r'^restaurants/', include('restaurants.urls', namespace='restaurants')),
     url(r'^mytodo/add/',TodoCreateView.as_view(), name='createt') ,
     url(r'^mytodo/(?P<slug>[\w-]+)/$', TodoUpdateView.as_view(), name='detailt'),
    
