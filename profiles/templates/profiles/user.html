@@ -16,7 +16,7 @@
 {% for rest in locations %}
     <div class='row'>
     <div class='col-sm-12'>
-        <div class='thumbnail'> 
+        <div class='thumbnail' style = "background-color: #f4f6f7"> 
             <h4><b>ToDo: </b><a href='{{ request.path}}?q={{ rest.title }}'>{{ rest.title }}</a></h4>
             <p><b>Creation or Update time: </b>{{ rest.updated }} 
            
