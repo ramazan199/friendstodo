@@ -5,13 +5,13 @@
     <div class='row'>
     <div class='col-sm-6 text-center col-sm-offset-3'>
          <h1>Users list</h1>
-
+         
 
 {% for obj in object_list %}
 
 
-        <div class='thumbnail'> 
-            <h3><a href='{% url "profiles:detail" username=obj %}'>{{ obj }}</a></h3>
+        <div class='thumbnail' style = "background-color: #f4f6f7"> 
+            <h3><a style="color: #303133" href='{% url "profiles:detail" username=obj %}'>{{ obj }}</a></h3>
         
             
         </div>

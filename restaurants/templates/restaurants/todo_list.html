@@ -3,14 +3,32 @@
 {% block head_title %}MyToDos{% endblock head_title %}
 
 {% block content %}
-<h1>My Todos <small><a href='{% url "createt" %}'>Add Todo</a></small></h1>
+<h1 >   My Todos  <a href='{% url "createt" %}' class="btn btn-primary" role="button" >Add Todo</a></h1>
 
-<ul>
-{% for obj in object_list %}
-    <li><h4><b>ToDo: </b><a href='{{ obj.get_absolute_url }}'>{{ obj }}</a><br/></h4><b>Creation or Update time:</b>  {{ obj.updated }}</li>
-{% empty %}<p>You haven't had ToDo list yet</p>
-    <li><a href='{% url "createt" %}'>Add One</a></li>
-#sasas
+<form class='form' method='GET' action='.'>
+    <input type='text' placeholder="Search.." name='q' value='{{ request.GET.q }}'>
+    <button class='btn btn-default' type='submit'>Search</button>
+    </form>
+    <hr/>
+{% if object_list %}
+{% for rest in object_list %}
+    <div class='row' style="color: white" >
+    <div class='col-sm-12'>
+        <div class='thumbnail' style="background-color: #262a30"> 
+            <h4><b>ToDo: </b><a style="color:#e0f1f9" href='{{ request.path}}?q={{ rest.title }}'>{{ rest.title }}</a></h4>
+            <p><b>Creation or Update time: </b>{{ rest.updated }} 
+           
+           
+            </p>
+          
+        </div>
+    </div>
+    </div>
+
 {% endfor %}
-</ul>
+
+{% else %}
+<p class='lead'>No Items Found</p>
+{% endif %}
+
 {% endblock %}

@@ -5,14 +5,15 @@
     <div class='row'>
     <div class='col-sm-6 text-center col-sm-offset-3'>
          <h1>User Following Feed</h1>
+         <hr>
 
 
 {% for obj in object_list %}
 
 
-        <div class='thumbnail'> 
-            <h3><a href='{% url "profiles:detail" username=obj.owner.username %}'>{{ obj.owner.username }}</a></h3>
-            <h4>{{ obj.name }}</h4>
+        <div class='thumbnail' style="background-color: #262a30" > 
+            <h3><a style="color:white" href='{% url "profiles:detail" username=obj.owner.username %}'>User: {{ obj.owner.username }}</a></h3>
+            <h4 style="color:white">ToDo: {{ obj.name }}</h4>
             
         </div>
 

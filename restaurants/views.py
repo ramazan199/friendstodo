@@ -12,9 +12,10 @@ from .models import Todo
 
 class TodoListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
-        return Todo.objects.filter(owner=self.request.user)
-    
-
+        query = self.request.GET.get('q')
+        qs = Todo.objects.filter(owner=self.request.user).search(query)
+        return qs.order_by("-updated")
+ 
 class TodoCreateView(LoginRequiredMixin, CreateView):
     form_class = TodoCreateForm
     login_url = '/login/'
