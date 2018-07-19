@@ -25,7 +25,7 @@ SECRET_KEY = 'j2b_z(*4w+#)t^nz3)0nq(tcj&3##klo73m76(x7%3z)b%85n!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['friendstodos.herokuapp.com','.friendstodos.com']
+ALLOWED_HOSTS = ['127.0.0.1','friendstodos.herokuapp.com','.friendstodos.com']
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'ramazansuleymanli@gmail.com' 

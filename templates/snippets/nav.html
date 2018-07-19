@@ -6,19 +6,23 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="{% url "home" %}">FriendsToDos.com</a>
       </div>
+      {% if request.user.is_authenticated %}
       <ul class="nav navbar-nav">
         
         {% comment %} <li {% if request.resolver_match.url_name == 'home' %}class="active"{%endif%}><a href='{% url "home" %}'>&nbsp;&nbsp;Home&nbsp;&nbsp;</a></li> {% endcomment %}
     
-        {% if request.user.is_authenticated %}
+        
         <li {% if request.resolver_match.url_name == 'todolistview' %}class="active"{%endif%}><a href='{% url "todolistview" %}'>&nbsp;&nbsp;My ToDos&nbsp;&nbsp;</a>
         </li> 
         <li {% if request.resolver_match.url_name == 'users' %}class="active"{%endif%}><a href='{% url "users" %}'>&nbsp;&nbsp;Our Users&nbsp;&nbsp;</a>
         </li> 
-        <li {% if request.resolver_match.url_name == 'logout' %}class="active"{%endif%}><a href='{% url "logout" %}'>&nbsp;&nbsp;Log Out&nbsp;&nbsp;</a>
-        </li> 
+      </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <li{% if request.resolver_match.url_name == 'logout' %}class="active"{%endif%}><a href="{% url "logout" %}"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+      </ul>
+      
         {% endif %}
-    </ul>
+   
         {% if not request.user.is_authenticated %}
         <ul class="nav navbar-nav navbar-right">
             <li {% if request.resolver_match.url_name == 'register' %}class="active"{%endif%}><a href='{% url "register" %}'><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
