@@ -44,7 +44,7 @@ class Profile(models.Model):
             from_email = settings.DEFAULT_FROM_EMAIL
             message = 'Activate your account here: {}'.format(path_)
             recipient_list = [self.user.email]
-            html_message = '<p>Activate your account here: http://127.0.0.1:8000{}</p>'.format(path_)
+            html_message = '<p>Activate your account here: https://friendstodos.herokuapp.com{}</p>'.format(path_)
             print(html_message)
             sent_mail = send_mail(
                              subject, 
