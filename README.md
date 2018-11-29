@@ -6,9 +6,8 @@ FriendsToDos is a simple experimental project- social network where users can cr
 ![1](https://user-images.githubusercontent.com/34911523/49246493-7dbcd380-f42e-11e8-8207-ae776f49531b.PNG)
 **Your home page with yoyr todo list:**
 ![4](https://user-images.githubusercontent.com/34911523/49246692-f6239480-f42e-11e8-8363-c2912b820309.PNG)
-
+**User following feed**
 ![3](https://user-images.githubusercontent.com/34911523/49246680-ec9a2c80-f42e-11e8-81c7-e65957a6e579.PNG)
-
 
 
 
